@@ -12,7 +12,6 @@
     }
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      /* Fond d'écran style Namek / DBZ */
       background: url('https://wallpapers.com/images/hd/dragon-ball-z-scenery-green-planet-sky-w29w0112462612j1.jpg') no-repeat center center fixed;
       background-size: cover;
       color: #ffffff;
@@ -80,7 +79,6 @@
       font-weight: bold;
       color: #f0f0f0;
     }
-    /* --- ZONES DE JEU --- */
     .tiger-and-pools-container {
       display: flex;
       justify-content: space-between;
@@ -94,17 +92,15 @@
       flex-direction: column;
       gap: 15px;
     }
-        /* Zone centrale de combat */
     .tiger-container {
-      flex: 3; /* Plus large pour accueillir Goku et l'ennemi */
+      flex: 3;
       position: relative;
       display: flex;
       justify-content: center;
       align-items: center;
       min-height: 350px;
-      gap: 20px; /* Espace entre Goku et l'ennemi */
+      gap: 20px;
     }
-    /* GOKU (A gauche) - MODIFICATION ICI */
     .attacker-goku {
       width: 200px;
       height: 200px;
@@ -114,13 +110,11 @@
       background-position: center;
       filter: drop-shadow(0 0 15px rgba(255, 255, 0, 0.6));
       z-index: 4;
-      transform: scaleX(1); /* Sens inversé (1 au lieu de -1) pour faire face à droite */
+      transform: scaleX(1);
     }
-    /* ENNEMI (Au centre/droite) - Anciennement .chest */
     .chest {
       width: 280px;
       height: 280px;
-      /* Image par défaut (Skin 1) */
       background-image: url('https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3aHlzdjQ0a21xbW0xNGpiOGVocGZvMGh1NjNwM3M0N294dHNyOTV3eSZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/nQaTkySwJERO/giphy.gif');
       background-size: contain;
       background-repeat: no-repeat;
@@ -130,7 +124,6 @@
       filter: drop-shadow(0 0 15px rgba(255, 0, 0, 0.5));
       z-index: 5;
     }
-    /* Skins Selector */
     .skin-selector {
         display: flex;
         justify-content: center;
@@ -152,7 +145,6 @@
         transition: transform 0.2s;
     }
     .skin-btn:hover { transform: scale(1.2); border-color: #FFD700; }
-        /* Animations de l'ennemi (Reprise des animations coffre) */
     .chest.level1 { filter: drop-shadow(0 0 15px rgba(0, 255, 0, 0.7)); }
     .chest.level2 { filter: drop-shadow(0 0 20px rgba(0, 150, 255, 0.8)); }
     .chest.level3 { animation: redGlow 2s ease-in-out infinite alternate; }
@@ -180,14 +172,13 @@
         0% { transform: scale(1); filter: drop-shadow(0 0 30px #ff0000); }
         100% { transform: scale(1.05); filter: drop-shadow(0 0 50px #ff4500); }
     }
-    /* Animations de coups (Hit) */
     .chest.hit { animation: lightHit 0.4s ease-out; }
     .chest.heavy-hit { animation: heavyHit 0.6s ease-out; }
     .chest.critical-hit { animation: criticalHit 0.8s ease-out; }
     .chest.mega-hit { animation: megaHit 1.2s ease-out; }
     .chest.ultra-hit { animation: ultraHit 1.5s ease-out; }
-        .chest.cracked {
-      filter: sepia(1) hue-rotate(-50deg) saturate(3) brightness(0.7); /* Effet blessé */
+    .chest.cracked {
+      filter: sepia(1) hue-rotate(-50deg) saturate(3) brightness(0.7);
       animation: redPulse 1s infinite;
     }
     .chest.broken {
@@ -207,7 +198,6 @@
     @keyframes screenShake { 25% { transform: translateX(-5px); } 75% { transform: translateX(5px); } }
     @keyframes megaShake { 20% { transform: translate(-10px, 10px); } 60% { transform: translate(10px, -10px); } }
     @keyframes ultraShake { 10% { transform: translate(-15px, -15px); } 30% { transform: translate(15px, 15px); } 50% { transform: translate(-15px, 15px); } }
-    /* Impact visuel */
     .impact-effect {
       position: absolute;
       font-size: 4em;
@@ -218,7 +208,6 @@
       text-shadow: 0 0 10px #ff0000;
     }
     @keyframes impactPop { 0% { opacity: 1; transform: scale(0.5); } 100% { opacity: 0; transform: scale(2); } }
-    /* Layout Responsive */
     @media (max-width: 768px) {
       .game-container { padding: 10px; }
       h1 { font-size: 1.5em; }
@@ -230,8 +219,6 @@
       .attack-modes { gap: 5px; }
       .attack-mode-image { width: 80px; height: 80px; }
     }
-    /* Le reste du CSS (Boutons, Pools, Jackpots) */
-    /* .hp-counter a été supprimé */
     .jackpot-square, .drop-square {
       background: rgba(0, 0, 0, 0.6);
       border-radius: 10px;
@@ -241,7 +228,7 @@
     }
     .jackpot-square-amount { color: #FFD700; font-size: 1.2em; font-weight: bold; }
     .drop-square-amount { color: #00FFFF; font-size: 1.2em; font-weight: bold; }
-        .attack-modes { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-top: 20px; }
+    .attack-modes { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-top: 20px; }
     .attack-mode-image {
       width: 90px; height: 90px;
       background: rgba(255,255,255,0.1);
@@ -269,7 +256,6 @@
     }
     .controls button:hover { transform: translateY(-3px); }
     #resetBtn { background: linear-gradient(45deg, #2193b0, #6dd5ed); }
-    /* Popup et Modals */
     .popup-overlay, .jackpot-winner, .drop-pool-winner {
       position: fixed; top: 0; left: 0; width: 100%; height: 100%;
       background: rgba(0,0,0,0.8);
@@ -283,13 +269,12 @@
       box-shadow: 0 0 50px rgba(255,215,0,0.5);
     }
     .popup-content h3 { color: #e74c3c; font-size: 1.8em; margin-bottom: 15px; }
-        .difficulty-selector { display: flex; justify-content: center; gap: 8px; margin: 15px 0; flex-wrap: wrap; }
+    .difficulty-selector { display: flex; justify-content: center; gap: 8px; margin: 15px 0; flex-wrap: wrap; }
     .difficulty-btn {
       width: 60px; height: 60px; border-radius: 10px; border: 2px solid rgba(255,255,255,0.3);
       cursor: pointer; background-size: cover; background-position: center; transition: 0.2s;
     }
     .difficulty-btn:hover, .difficulty-btn.active { transform: scale(1.15); border-color: #fff; box-shadow: 0 0 15px rgba(255,255,255,0.5); }
-    /* Images difficulté (gardées ou modifiées si tu veux, j'utilise les tiennes) */
     .difficulty-btn.level1 { background-image: url('https://i.ibb.co/WvbQb5FL/IMG-7719-Photoroom.png'); }
     .difficulty-btn.level2 { background-image: url('https://i.ibb.co/vxKqg4m7/IMG-7717-Photoroom.png'); }
     .difficulty-btn.level3 { background-image: url('https://i.ibb.co/YTYp66G9/IMG-7718-Photoroom.png'); }
@@ -297,14 +282,12 @@
     .difficulty-btn.level5 { background-image: url('https://i.ibb.co/JR5SS5vd/IMG-6570.png'); }
     .difficulty-btn.level6 { background-image: url('https://i.ibb.co/JMPfpWV/IMG-5851.png'); }
     .difficulty-btn.level7 { background-image: url('https://i.ibb.co/5XX6nS2W/unnamed-Photoroom.png'); }
-    /* Debug panels */
-    .debug-panel, .hp-manager, .winners-table {
+    .debug-panel, .winners-table {
       position: fixed; background: rgba(0,0,0,0.8); border: 1px solid #444; color: white; padding: 10px; border-radius: 5px; z-index: 100; font-size: 12px;
     }
     .debug-panel { top: 10px; left: 10px; }
-    /* .hp-manager a été masqué dans le HTML, mais le CSS reste pour la cohérence si on le remet */
     .winners-table { top: 10px; right: 10px; width: 200px; }
-    @media(max-width: 1000px) { .debug-panel, .hp-manager, .winners-table { display: none; } }
+    @media(max-width: 1000px) { .debug-panel, .winners-table { display: none; } }
     .coins-display {
       position: absolute; top: -50px; left: 50%; transform: translateX(-50%);
       font-size: 20px; font-weight: bold; color: #ffd700;
@@ -327,16 +310,16 @@
   <div class="game-container" id="gameContainer">
     <div id="comboIndicator" style="display:none; position:absolute; top:10px; right:10px; color:yellow; font-weight:bold; font-size:1.5em; text-shadow:0 0 5px red;">COMBO x0</div>
 
-        <h1>🔥 DRAGON BALL Z BATTLE 🔥</h1>
+    <h1>🔥 DRAGON BALL Z BATTLE 🔥</h1>
 
-        <div class="skin-selector">
-        <div style="width:100%; text-align:center; color:#ccc; margin-bottom:5px; font-size:0.9em;">CHOISIS TON ADVERSAIRE</div>
-        <div class="skin-btn" style="background-image: url('https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3aHlzdjQ0a21xbW0xNGpiOGVocGZvMGh1NjNwM3M0N294dHNyOTV3eSZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/nQaTkySwJERO/giphy.gif');" onclick="changeSkin(0)"></div>
-        <div class="skin-btn" style="background-image: url('https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3ZnZiOXo3cHdneGtkemEwY2VlZXk0cHo3Zjl0c201YTg0Zm5uYXdndyZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/80zNIwf97mCJy/giphy.gif');" onclick="changeSkin(1)"></div>
-        <div class="skin-btn" style="background-image: url('https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3ZnZiOXo3cHdneGtkemEwY2VlZXk0cHo3Zjl0c201YTg0Zm5uYXdndyZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/12Wkdt05mkT4oo/giphy.gif');" onclick="changeSkin(2)"></div>
-        <div class="skin-btn" style="background-image: url('https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3eWVzdzRlem9tNHU5ZWZzNGJsb3V5bm90eGU4d2J1aWQ0dnY0bm1paSZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/oWdbYYDl94pub9AIVY/giphy.gif');" onclick="changeSkin(3)"></div>
-        <div class="skin-btn" style="background-image: url('https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3d21jMmV3eTEyNnJjNjRqZ2c4amJvNjZ5NHB0NmowZGIwbWx6amMzZCZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/rGmanVvUtu0og/giphy.gif');" onclick="changeSkin(4)"></div>
-        <div class="skin-btn" style="background-image: url('https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3bWR5aGh3bDk3Mmo3MnExanBtajZ1NnEyeWVhNWtwdzBhYmp3MnE5dSZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/XvTfRJ1qpc8lq/giphy.gif');" onclick="changeSkin(5)"></div>
+    <div class="skin-selector">
+      <div style="width:100%; text-align:center; color:#ccc; margin-bottom:5px; font-size:0.9em;">CHOISIS TON ADVERSAIRE</div>
+      <div class="skin-btn" style="background-image: url('https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3aHlzdjQ0a21xbW0xNGpiOGVocGZvMGh1NjNwM3M0N294dHNyOTV3eSZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/nQaTkySwJERO/giphy.gif');" onclick="changeSkin(0)"></div>
+      <div class="skin-btn" style="background-image: url('https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3ZnZiOXo3cHdneGtkemEwY2VlZXk0cHo3Zjl0c201YTg4Zm5uYXdndyZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/80zNIwf97mCJy/giphy.gif');" onclick="changeSkin(1)"></div>
+      <div class="skin-btn" style="background-image: url('https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3ZnZiOXo3cHdneGtkemEwY2VlZXk0cHo3Zjl0c201YTg4Zm5uYXdndyZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/12Wkdt05mkT4oo/giphy.gif');" onclick="changeSkin(2)"></div>
+      <div class="skin-btn" style="background-image: url('https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3eWVzdzRlem9tNHU5ZWZzNGJsb3V5bm90eGU4d2J1aWQ0dnY0bm1paSZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/oWdbYYDl94pub9AIVY/giphy.gif');" onclick="changeSkin(3)"></div>
+      <div class="skin-btn" style="background-image: url('https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3d21jMmV3eTEyNnJjNjRqZ2c4amJvNjZ5NHB0NmowZGIwbWx6amMzZCZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/rGmanVvUtu0og/giphy.gif');" onclick="changeSkin(4)"></div>
+      <div class="skin-btn" style="background-image: url('https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3bWR5aGh3bDk3Mmo3MnExanBtajZ1NnEyeWVhNWtwdzBhYmp3MnE5dSZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/XvTfRJ1qpc8lq/giphy.gif');" onclick="changeSkin(5)"></div>
     </div>
 
     <div class="tiger-and-pools-container">
@@ -352,10 +335,8 @@
 
       <div class="tiger-container">
         <div class="attacker-goku"></div>
-
-                <div class="chest" id="chest"></div>
-
-                <div class="particles-container" id="particlesContainer"></div>
+        <div class="chest" id="chest"></div>
+        <div class="particles-container" id="particlesContainer"></div>
       </div>
 
       <div class="pool-container">
@@ -449,18 +430,27 @@
   </div>
 
   <script>
-    /* --- CONFIGURATION DES SKINS --- */
     const enemySkins = [
         'https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3aHlzdjQ0a21xbW0xNGpiOGVocGZvMGh1NjNwM3M0N294dHNyOTV3eSZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/nQaTkySwJERO/giphy.gif',
-        'https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3ZnZiOXo3cHdneGtkemEwY2VlZXk0cHo3Zjl0c201YTg0Zm5uYXdndyZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/80zNIwf97mCJy/giphy.gif',
-        'https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3ZnZiOXo3cHdneGtkemEwY2VlZXk0cHo3Zjl0c201YTg0Zm5uYXdndyZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/12Wkdt05mkT4oo/giphy.gif',
+        'https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3ZnZiOXo3cHdneGtkemEwY2VlZXk0cHo3Zjl0c201YTg4Zm5uYXdndyZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/80zNIwf97mCJy/giphy.gif',
+        'https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3ZnZiOXo3cHdneGtkemEwY2VlZXk0cHo3Zjl0c201YTg4Zm5uYXdndyZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/12Wkdt05mkT4oo/giphy.gif',
         'https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3eWVzdzRlem9tNHU5ZWZzNGJsb3V5bm90eGU4d2J1aWQ0dnY0bm1paSZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/oWdbYYDl94pub9AIVY/giphy.gif',
-        'https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3d21jMmV3eTEyNnJjNjRqZ2c4amJvNjZ5NHB0NmowZGIwbWx6amMzZCZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/rGmanVvUtu0og/giphy.gif',
+        'https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3d21jMmV3eTEyNnJjNjRqZ2c4amJvNjZ5NHB0NmowZGIwbWx6amMzZCZlcD12MV9zdGlja2Vyc19zZ101yY2gmY3Q9cw/rGmanVvUtu0og/giphy.gif',
         'https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3bWR5aGh3bDk3Mmo3MnExanBtajZ1NnEyeWVhNWtwdzBhYmp3MnE5dSZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/XvTfRJ1qpc8lq/giphy.gif'
     ];
+    
+    // Tableau des récompenses pour chaque niveau
+    const rewardImages = {
+        level1: 'https://i.ibb.co/WvbQb5FL/IMG-7719-Photoroom.png',
+        level2: 'https://i.ibb.co/vxKqg4m7/IMG-7717-Photoroom.png',
+        level3: 'https://i.ibb.co/YTYp66G9/IMG-7718-Photoroom.png',
+        level4: 'https://i.ibb.co/hxXnkQh7/IMG-5861.png',
+        level5: 'https://i.ibb.co/JR5SS5vd/IMG-6570.png',
+        level6: 'https://i.ibb.co/JMPfpWV/IMG-5851.png',
+        level7: 'https://i.ibb.co/5XX6nS2W/unnamed-Photoroom.png'
+    };
+    
     let currentSkinIndex = 0;
-
-    /* --- VARIABLES JEU --- */
     let maxHP, currentHP, coupCounter, totalHits;
     let hitsUntilCoin = 4;
     let attackMode = 1;
@@ -475,16 +465,12 @@
     let recentWinners = [];
     let audioContext = null;
 
-    /* --- ELEMENTS DOM --- */
     const chest = document.getElementById("chest");
     const message = document.getElementById("message");
-    // const hpValue = document.getElementById("hpValue"); // Supprimé
     const comboIndicator = document.getElementById("comboIndicator");
     const particlesContainer = document.getElementById("particlesContainer");
 
-    // Initialisation
     function initGame() {
-      // Configuration PV selon niveau
       switch (currentDifficulty) {
         case "level1": maxHP = 5000; break;
         case "level2": maxHP = 20000; break;
@@ -504,7 +490,6 @@
       updateUI();
     }
 
-    /* --- FONCTIONS --- */
     function changeSkin(index) {
         currentSkinIndex = index;
         chest.style.backgroundImage = `url('${enemySkins[index]}')`;
@@ -512,13 +497,11 @@
     }
 
     function updateUI() {
-      // hpValue.textContent = `${currentHP.toLocaleString()} / ${maxHP.toLocaleString()}`; // Supprimé
       if (currentHP <= 0) {
           chest.classList.add('broken');
           message.textContent = "ENNEMI KO !";
       } else {
           chest.classList.remove('broken');
-          // Le CSS gère l'effet "cracked" basé sur le HP restant
           if (maxHP - currentHP >= maxHP * 0.7) chest.classList.add("cracked");
           else chest.classList.remove("cracked");
       }
@@ -528,7 +511,6 @@
       if (currentHP <= 0 || isAttacking) return;
       isAttacking = true;
 
-      // Calculs
       let hits = attackMode;
       for (let i = 0; i < hits && currentHP > 0; i++) {
         currentHP--;
@@ -537,12 +519,11 @@
         dropPoolHitsCounter++;
         hitsUntilCoin--;
         if (hitsUntilCoin <= 0) {
-            showCoins(1); // Gagne 1 rose/coin visuellement
+            showCoins(1);
             hitsUntilCoin = 4;
         }
       }
 
-      // Animation
       createHitEffect();
       let animClass = 'hit';
       let shakeClass = 'screen-shake';
@@ -559,7 +540,6 @@
           if (currentHP <= 0) endGame();
       }, 200);
 
-      // Gestion Pools
       updatePools();
       updateUI();
     }
@@ -584,20 +564,17 @@
     }
 
     function updatePools() {
-        // Logique simplifiée pour les barres de progression
         let jackPercent = (jackpotHitsCounter % 100);
         let dropPercent = (dropPoolHitsCounter % 100);
         document.getElementById('jackpotProgressBar').style.width = jackPercent + "%";
         document.getElementById('dropPoolProgressBar').style.width = dropPercent + "%";
 
-        // Simuler augmentation montant
         if(jackpotHitsCounter % 10 === 0) jackpotAmount += 5;
         if(dropPoolHitsCounter % 10 === 0) dropPoolAmount += 2;
 
         document.getElementById('jackpotAmount').innerText = jackpotAmount.toLocaleString() + " 🌹";
         document.getElementById('dropPoolAmount').innerText = dropPoolAmount.toLocaleString() + " 🌹";
 
-        // Chance aléatoire de gagner (simulation)
         if(jackpotHitsCounter > 100 && Math.random() < 0.01) triggerWin('jackpot');
         if(dropPoolHitsCounter > 100 && Math.random() < 0.02) triggerWin('drop');
     }
@@ -616,25 +593,19 @@
 
     function endGame() {
         message.textContent = "ENNEMI DÉTRUIT ! RÉCOMPENSE OBTENUE !";
-        // Afficher popup victoire
         const popup = document.getElementById('victoryPopup');
         document.getElementById('popupRewardText').textContent = "Vous gagnez le trésor du niveau " + currentDifficulty.replace('level','');
-
-        // Image récompense selon niveau (Logique existante conservée)
-        let imgUrl = "";
-        if(currentDifficulty === "level1") imgUrl = "https://i.ibb.co/WvbQb5FL/IMG-7719-Photoroom.png";
-        else if(currentDifficulty === "level2") imgUrl = "https://i.ibb.co/vxKqg4m7/IMG-7717-Photoroom.png";
-        else imgUrl = "https://i.ibb.co/YTYp66G9/IMG-7718-Photoroom.png"; // Default fallback
-
-        document.getElementById('popupRewardImage').style.backgroundImage = `url('${imgUrl}')`;
+        
+        // CORRECTION ICI : Utiliser le tableau rewardImages pour afficher la bonne image
+        const rewardImageUrl = rewardImages[currentDifficulty];
+        document.getElementById('popupRewardImage').style.backgroundImage = `url('${rewardImageUrl}')`;
+        
         popup.classList.add('active');
     }
 
-    /* --- LISTENERS --- */
     document.getElementById('attackBtn').addEventListener('click', attack);
     document.getElementById('resetBtn').addEventListener('click', initGame);
 
-    // Difficulty Btns
     document.querySelectorAll('.difficulty-btn').forEach(btn => {
         btn.addEventListener('click', function() {
             document.querySelectorAll('.difficulty-btn').forEach(b => b.classList.remove('active'));
@@ -644,7 +615,6 @@
         });
     });
 
-    // Attack Modes
     const modes = [1, 10, 30, 100, 500, 1000, 5000];
     modes.forEach(m => {
         document.getElementById(`mode${m}`).addEventListener('click', function() {
@@ -655,7 +625,6 @@
         });
     });
 
-    // Popups close
     document.getElementById('closePopupBtn').addEventListener('click', () => {
         document.getElementById('victoryPopup').classList.remove('active');
         initGame();
@@ -663,14 +632,11 @@
     document.getElementById('jackpotCloseBtn').addEventListener('click', () => document.getElementById('jackpotWinner').classList.remove('active'));
     document.getElementById('dropPoolCloseBtn').addEventListener('click', () => document.getElementById('dropPoolWinner').classList.remove('active'));
 
-    // Admin Tools
-    // Les boutons +HP et -HP du HP Manager sont supprimés du HTML et du JS.
     document.getElementById('forceJackpotBtn').addEventListener('click', () => triggerWin('jackpot'));
     document.getElementById('forceDropBtn').addEventListener('click', () => triggerWin('drop'));
 
-    // Start
     initGame();
-    changeSkin(0); // Charge le premier skin
+    changeSkin(0);
   </script>
 </body>
 </html>
