@@ -104,7 +104,7 @@
     .attacker-goku {
       width: 200px;
       height: 200px;
-      background-image: url('https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3bWR5aGh3bDk3Mmo3MnExanBtajZ1NnEyeWVhNWtwdzBhYmp3MnE5dSZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/SV0LuYdSMmKEklpZKs/giphy.gif');
+      background-image: url('https://i.gifer.com/YTiO.gif');
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center;
@@ -309,9 +309,7 @@
   </div>
   <div class="game-container" id="gameContainer">
     <div id="comboIndicator" style="display:none; position:absolute; top:10px; right:10px; color:yellow; font-weight:bold; font-size:1.5em; text-shadow:0 0 5px red;">COMBO x0</div>
-
     <h1>🔥 DRAGON BALL Z BATTLE 🔥</h1>
-
     <div class="skin-selector">
       <div style="width:100%; text-align:center; color:#ccc; margin-bottom:5px; font-size:0.9em;">CHOISIS TON ADVERSAIRE</div>
       <div class="skin-btn" style="background-image: url('https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3aHlzdjQ0a21xbW0xNGpiOGVocGZvMGh1NjNwM3M0N294dHNyOTV3eSZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/nQaTkySwJERO/giphy.gif');" onclick="changeSkin(0)"></div>
@@ -321,7 +319,6 @@
       <div class="skin-btn" style="background-image: url('https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3d21jMmV3eTEyNnJjNjRqZ2c4amJvNjZ5NHB0NmowZGIwbWx6amMzZCZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/rGmanVvUtu0og/giphy.gif');" onclick="changeSkin(4)"></div>
       <div class="skin-btn" style="background-image: url('https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3bWR5aGh3bDk3Mmo3MnExanBtajZ1NnEyeWVhNWtwdzBhYmp3MnE5dSZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/XvTfRJ1qpc8lq/giphy.gif');" onclick="changeSkin(5)"></div>
     </div>
-
     <div class="tiger-and-pools-container">
       <div class="pool-container">
         <div class="drop-square">
@@ -332,13 +329,11 @@
           </div>
         </div>
       </div>
-
       <div class="tiger-container">
         <div class="attacker-goku"></div>
         <div class="chest" id="chest"></div>
         <div class="particles-container" id="particlesContainer"></div>
       </div>
-
       <div class="pool-container">
         <div class="jackpot-square">
           <div class="jackpot-square-title">JACKPOT</div>
@@ -349,7 +344,6 @@
         </div>
       </div>
     </div>
-
     <div class="difficulty-selector">
       <div class="difficulty-btn level1 active" data-difficulty="level1" title="Niveau 1"></div>
       <div class="difficulty-btn level2" data-difficulty="level2" title="Niveau 2"></div>
@@ -359,12 +353,10 @@
       <div class="difficulty-btn level6" data-difficulty="level6" title="Niveau 6"></div>
       <div class="difficulty-btn level7" data-difficulty="level7" title="Niveau TITAN"></div>
     </div>
-
     <div class="instructions">
       <h2>💥 VAINCS L'ENNEMI POUR GAGNER ! 💥</h2>
       <p>Clique pour lancer des attaques Ki !</p>
     </div>
-
     <div class="attack-modes">
       <div id="mode1" class="attack-mode-image active">
         <img src="https://i.ibb.co/WNXDxn2y/IMG-7354-Photoroom.png" alt="1 coup">
@@ -395,14 +387,12 @@
         <div class="attack-mode-label">Ultra Instinct (5k)</div>
       </div>
     </div>
-
     <div class="controls">
       <button id="attackBtn">ATTAQUER !</button>
       <button id="resetBtn">RAPPELER ENNEMI</button>
     </div>
     <p id="message" style="margin-top:10px; font-weight:bold; min-height:20px;"></p>
   </div>
-
   <div class="popup-overlay" id="victoryPopup">
     <div class="popup-content">
       <h3>🎉 ENNEMI VAINCU ! 🎉</h3>
@@ -412,7 +402,6 @@
       <button class="popup-close-btn" id="closePopupBtn" style="padding:10px 20px; border-radius:20px; border:none; background:orange; cursor:pointer; font-weight:bold;">Continuer</button>
     </div>
   </div>
-
   <div class="jackpot-winner" id="jackpotWinner">
     <div class="jackpot-winner-content">
       <h3>🎰 JACKPOT SUPER SAIYAN ! 🎰</h3>
@@ -420,7 +409,6 @@
       <button class="jackpot-close-btn" id="jackpotCloseBtn" style="margin-top:20px; padding:10px 20px; border-radius:20px; border:none; background:gold; cursor:pointer;">Super !</button>
     </div>
   </div>
-
   <div class="drop-pool-winner" id="dropPoolWinner">
     <div class="drop-pool-winner-content">
       <h3>💎 DROP LÉGENDAIRE ! 💎</h3>
@@ -428,14 +416,13 @@
       <button class="drop-pool-close-btn" id="dropPoolCloseBtn" style="margin-top:20px; padding:10px 20px; border-radius:20px; border:none; background:cyan; cursor:pointer;">Génial !</button>
     </div>
   </div>
-
   <script>
     const enemySkins = [
         'https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3aHlzdjQ0a21xbW0xNGpiOGVocGZvMGh1NjNwM3M0N294dHNyOTV3eSZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/nQaTkySwJERO/giphy.gif',
         'https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3ZnZiOXo3cHdneGtkemEwY2VlZXk0cHo3Zjl0c201YTg4Zm5uYXdndyZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/80zNIwf97mCJy/giphy.gif',
         'https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3ZnZiOXo3cHdneGtkemEwY2VlZXk0cHo3Zjl0c201YTg4Zm5uYXdndyZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/12Wkdt05mkT4oo/giphy.gif',
         'https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3eWVzdzRlem9tNHU5ZWZzNGJsb3V5bm90eGU4d2J1aWQ0dnY0bm1paSZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/oWdbYYDl94pub9AIVY/giphy.gif',
-        'https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3d21jMmV3eTEyNnJjNjRqZ2c4amJvNjZ5NHB0NmowZGIwbWx6amMzZCZlcD12MV9zdGlja2Vyc19zZ101yY2gmY3Q9cw/rGmanVvUtu0og/giphy.gif',
+        'https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3d21jMmV3eTEyNnJjNjRqZ2c4amJvNjZ5NHB0NmowZGIwbWx6amMzZCZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/rGmanVvUtu0og/giphy.gif',
         'https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3bWR5aGh3bDk3Mmo3MnExanBtajZ1NnEyeWVhNWtwdzBhYmp3MnE5dSZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/XvTfRJ1qpc8lq/giphy.gif'
     ];
     
